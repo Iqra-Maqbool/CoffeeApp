@@ -223,7 +223,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
-
                     <TextView
                         android:id="@+id/textView20"
                         android:layout_width="match_parent"
