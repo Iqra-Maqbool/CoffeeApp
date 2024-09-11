@@ -17,13 +17,15 @@
         android:layout_marginEnd="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/showCoffeeImg"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_120sdp"
             android:layout_marginTop="@dimen/_3sdp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,9 +36,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
-            android:layout_width="@dimen/_188sdp"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_marginTop="@dimen/_170sdp"
+            android:layout_width="@dimen/_168sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_105sdp"
             app:cardCornerRadius="@dimen/_25sdp"
             app:layout_constraintEnd_toEndOf="@+id/showCoffeeImg"
             app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +46,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout7"
-                android:layout_width="@dimen/_188sdp"
-                android:layout_height="@dimen/_45sdp"
+                android:layout_width="@dimen/_168sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
                 tools:layout_editor_absoluteY="160dp">
@@ -69,11 +71,11 @@
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="@dimen/_63sdp"
-                    android:layout_height="0dp"
+                    android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
-                    android:textSize="@dimen/_34ssp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +91,7 @@
                     android:gravity="center_vertical"
                     android:text="1"
                     android:textAlignment="center"
-                    android:textSize="@dimen/_24ssp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -127,8 +129,8 @@
 
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:layout_width="@dimen/_235sdp"
-                android:layout_height="@dimen/_44sdp"
+                android:layout_width="245dp"
+                android:layout_height="41dp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:numStars="5"
@@ -147,7 +149,7 @@
             android:id="@+id/constraintLayout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
@@ -170,8 +172,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="@dimen/_8sdp"
-                android:text="A Cappuccino is an approximately 150 ml\n(5 oz) beverage ,with 25 ml of espreaso coffe and 45 ml of frest milk "
+                android:layout_marginTop="@dimen/_4sdp"
+                android:text="A Cappuccino is an approximately 150 ml\nbeverage, with 25 ml of espresso Coffee \nand 45ml of fresh milk. "
                 android:textSize="@dimen/_15ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.021"
@@ -184,7 +186,7 @@
             android:id="@+id/constraintLayout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/TopConstraint"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/TopConstraint"
@@ -205,10 +207,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_36sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout5"
@@ -217,9 +219,9 @@
                 app:layout_constraintTop_toTopOf="@id/constraintLayout5">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
 
                     <TextView
@@ -229,13 +231,13 @@
                         android:gravity="center_vertical"
                         android:text="S"
                         android:textAlignment="center"
-                        android:textSize="@dimen/_28ssp" />
+                        android:textSize="@dimen/_24ssp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
 
                     <TextView
@@ -245,13 +247,13 @@
                         android:gravity="center_vertical"
                         android:text="M"
                         android:textAlignment="center"
-                        android:textSize="@dimen/_28ssp" />
+                        android:textSize="@dimen/_24ssp" />
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_100sdp"
+                    android:layout_width="@dimen/_90sdp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_3sdp"
+                    android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
 
                     <TextView
@@ -261,7 +263,7 @@
                         android:gravity="center_vertical"
                         android:text="L"
                         android:textAlignment="center"
-                        android:textSize="@dimen/_28ssp" />
+                        android:textSize="@dimen/_24ssp" />
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
@@ -296,7 +298,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_3sdp"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:gravity="center_vertical"
                 android:text="432"
                 android:textAlignment="center"
@@ -326,9 +328,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:text="Rs."
-                android:textStyle="bold"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView18"

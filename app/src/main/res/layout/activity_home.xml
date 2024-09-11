@@ -37,8 +37,8 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_52sdp"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_1sdp"
             android:layout_marginEnd="@dimen/_20sdp"
@@ -57,9 +57,9 @@
     <com.google.android.material.card.MaterialCardView
 
         android:id="@+id/materialCardView"
-        android:layout_width="@dimen/_250sdp"
+        android:layout_width="@dimen/_230sdp"
         android:layout_height="@dimen/_90sdp"
-        android:layout_marginTop="@dimen/_142sdp"
+        android:layout_marginTop="@dimen/_120sdp"
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
             android:id="@+id/cardView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_28sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:background="#D32F2F"
             android:backgroundTint="#D32F2F"
@@ -153,10 +153,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bNav"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_80sdp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,9 +166,9 @@
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:layout_width="match_parent"
-            app:fabCradleMargin="@dimen/_2sdp"
+            app:fabCradleMargin="@dimen/_16sdp"
             app:fabCradleRoundedCornerRadius="50dp"
-            app:fabCradleVerticalOffset="6dp"
+            app:fabCradleVerticalOffset="1dp"
             android:layout_height="wrap_content"
             android:id="@+id/app_bar"
             android:layout_gravity="bottom"
@@ -175,24 +176,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_weight="0.2"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/imageView30"
                         android:layout_width="@dimen/_22sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_30sdp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/username" />
+                        app:srcCompat="@drawable/baseline_home_24" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
@@ -202,8 +204,7 @@
                     <ImageView
                         android:id="@+id/imageView300"
                         android:layout_width="@dimen/_22sdp"
-                        android:layout_height="@dimen/_50sdp"
-
+                        android:layout_height="@dimen/_30sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -218,7 +219,7 @@
                     <ImageView
                         android:id="@+id/imageView3000"
                         android:layout_width="@dimen/_22sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_30sdp"
 
                         android:visibility="invisible"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -234,7 +235,7 @@
                     <ImageView
                         android:id="@+id/imageView3"
                         android:layout_width="@dimen/_22sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_30sdp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -250,7 +251,7 @@
                     <ImageView
                         android:id="@+id/imageView45"
                         android:layout_width="@dimen/_22sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_30sdp"
 
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -266,13 +267,14 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_40sdp"
             android:src="@drawable/baseline_shopping_cart_24"
+
             android:id="@+id/cartBtn"
+            android:layout_gravity="center"
             android:backgroundTint="#C67C4E"
-            app:maxImageSize="@dimen/_25sdp"
-            android:pointerIcon="wait"
+            app:maxImageSize="@dimen/_20sdp"
             android:tint="@color/white"
             app:layout_anchor="@id/app_bar"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
