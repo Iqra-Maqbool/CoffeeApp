@@ -82,7 +82,7 @@
                     android:id="@+id/textView140"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_160sdp"
+                    android:layout_marginLeft="@dimen/_170sdp"
                     android:text="Rs."
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
