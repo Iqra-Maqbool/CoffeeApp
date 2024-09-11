@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_8sdp">
+    android:layout_margin="@dimen/_8sdp"
+    app:cardCornerRadius="10dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,7 +15,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
-            android:layout_width="@dimen/_80sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="@dimen/_60sdp"
             app:cardCornerRadius="10dp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
@@ -24,7 +25,7 @@
 
             <ImageView
                 android:id="@+id/categoryImg"
-                android:layout_width="@dimen/_80sdp"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/_60sdp"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
@@ -36,9 +37,10 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="@dimen/_80sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="@dimen/_2sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -47,7 +49,7 @@
                 android:id="@+id/CoffeeType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="Caffee Mocha"
                 android:textColor="#000000"
@@ -64,7 +66,8 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_1sdp"
                 android:textSize="@dimen/_8ssp"
                 android:text="Deep Foam">
 
@@ -72,10 +75,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="@dimen/_80sdp"
+            android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
+android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_1sdp"
-                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
                 android:text="Rs."
                 android:textAlignment="center"
                 android:textSize="@dimen/_10ssp"
@@ -104,9 +108,10 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/_15sdp"
                 android:layout_height="@dimen/_15sdp"
-                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_52sdp"
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginRight="@dimen/_1sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
                 android:backgroundTint="#C67C4E"
                 app:cornerRadius="5dp">
 
