@@ -1,105 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:backgroundTint="#000000"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_315sdp"
+        android:layout_height="645dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/splash" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginTop="@dimen/_300sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:itemIconTint="@color/iconcolor"
+        app:itemTextColor="@color/iconcolor"
+        app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_marginStart="@dimen/_13sdp"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:layout_marginEnd="@dimen/_13sdp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:backgroundTint="#C67C4E"
-            android:fontFamily="@font/sora_semibold"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:text="Get Started"
-            android:textSize="@dimen/_13ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout"
-            app:layout_constraintVertical_bias="0.0"
-            ></com.google.android.material.button.MaterialButton>
-
-
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_155sdp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView"
-                android:layout_width="@dimen/_262sdp"
-                android:layout_height="@dimen/_115sdp"
-                android:fontFamily="@font/sora_semibold"
-                android:layout_gravity="center"
-                android:text="Fall in Love with \n Coffee in Blissful \n Delight!"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_26ssp" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:textColor="#554E4E"
-                android:text="Welcome to our cozy coffee corner, where \n every cup is a delightful for you"
-                android:textAlignment="center"
-                android:textSize="@dimen/_11ssp" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:menu="@menu/menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

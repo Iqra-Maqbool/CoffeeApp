@@ -1,18 +1,18 @@
 // CategoryAdapter.kt
 package com.example.coffeeapp.adapter
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeapp.CoffeeDetail
 import com.example.coffeeapp.databinding.CoffeeItemsBinding
+import com.example.coffeeapp.fragments.home.HomeFragment
 import com.example.coffeeapp.models.CategoryModelClass
 
 class CategoryAdapter(
     private val coffeeItems: MutableList<CategoryModelClass>,
-    private val context: Context
+    private val context: HomeFragment
 ) : RecyclerView.Adapter<CategoryAdapter.MyCategoryViewHolder>() {
 
     class MyCategoryViewHolder(val binding: CoffeeItemsBinding) : RecyclerView.ViewHolder(binding.root)
@@ -34,7 +34,8 @@ class CategoryAdapter(
             showPrice.text = data.price.toString()
 
             root.setOnClickListener {
-                val intent = Intent(context, CoffeeDetail::class.java).apply {
+                // Use requireContext() to get the context from the fragment
+                val intent = Intent(context.requireContext(), CoffeeDetail::class.java).apply {
                     putExtra("EXTRA_NAME", data.name)
                     putExtra("EXTRA_DESCRIPTION", data.description)
                     putExtra("EXTRA_PRICE", data.price)
@@ -43,4 +44,5 @@ class CategoryAdapter(
             }
         }
     }
+
 }
