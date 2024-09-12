@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        //To redirect from main to home activity
+
         binding.button.setOnClickListener(){
             startActivity(Intent(this, Login::class.java))
         }

@@ -1,4 +1,7 @@
 package com.example.coffeeapp.models
 
-class CategoryModelClass (var categoryImage:Int , var categoryText:String){
-}
+data class CategoryModelClass(
+    val name:String?=null,
+    val description:String?=null,
+    val price:Double=0.0
+)

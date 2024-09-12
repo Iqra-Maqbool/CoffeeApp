@@ -36,7 +36,7 @@ class Signup : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        //To add new User
+
         binding.registerBtn.setOnClickListener {
             binding.apply {
                 val signupUsername = signupUsernameEt.text.toString()

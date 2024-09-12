@@ -1,46 +1,46 @@
+// CategoryAdapter.kt
 package com.example.coffeeapp.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeapp.CoffeeDetail
 import com.example.coffeeapp.databinding.CoffeeItemsBinding
 import com.example.coffeeapp.models.CategoryModelClass
 
-
 class CategoryAdapter(
-    private var categoryList: ArrayList<CategoryModelClass>,
-    private var requireActivity: FragmentActivity
+    private val coffeeItems: MutableList<CategoryModelClass>,
+    private val context: Context
 ) : RecyclerView.Adapter<CategoryAdapter.MyCategoryViewHolder>() {
-    class MyCategoryViewHolder(var binding: CoffeeItemsBinding) : RecyclerView.ViewHolder(binding.root)
+
+    class MyCategoryViewHolder(val binding: CoffeeItemsBinding) : RecyclerView.ViewHolder(binding.root)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyCategoryViewHolder {
         return MyCategoryViewHolder(
             CoffeeItemsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
-    override fun getItemCount() = categoryList.size
+    override fun getItemCount(): Int = coffeeItems.size
 
     override fun onBindViewHolder(holder: MyCategoryViewHolder, position: Int) {
-        val data = categoryList[position]
+        val data = coffeeItems[position]
 
-        holder.binding.apply{
-            categoryImg.setImageResource(data.categoryImage)
-           CoffeeType.text = data.categoryText
+        holder.binding.apply {
+            CoffeeName.text = data.name
+            description.text = data.description
+            showPrice.text = data.price.toString()
 
-           CategorySubj.setOnClickListener {
-                var intent = Intent(requireActivity, CoffeeDetail::class.java)
-               intent.apply {
-                 putExtra("QuizImg", data.categoryImage)
-                   putExtra("QuestionType", data.categoryText)
-                   requireActivity.startActivity(intent)
-               }
+            root.setOnClickListener {
+                val intent = Intent(context, CoffeeDetail::class.java).apply {
+                    putExtra("EXTRA_NAME", data.name)
+                    putExtra("EXTRA_DESCRIPTION", data.description)
+                    putExtra("EXTRA_PRICE", data.price)
+                }
+                context.startActivity(intent)
             }
         }
     }
 }
-
-
-

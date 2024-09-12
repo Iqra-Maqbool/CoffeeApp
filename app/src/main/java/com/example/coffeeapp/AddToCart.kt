@@ -1,49 +1,37 @@
-package com.example.coffeeapp
 
+package com.example.coffeeapp
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coffeeapp.adapter.CartAdapter
-import com.example.coffeeapp.databinding.ActivityAddToCartBinding
+import com.example.coffeeapp.databinding.ActivityAddToCart2Binding
 import com.example.coffeeapp.models.CartModelClass
 
+
 class AddToCart : AppCompatActivity() {
-    private lateinit var binding: ActivityAddToCartBinding
-
-    private lateinit var cartList: ArrayList<CartModelClass>
-
+    private lateinit var binding: ActivityAddToCart2Binding
+    private lateinit var cartAdapter: CartAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddToCartBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
+        binding = ActivityAddToCart2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
+        val name = intent.getStringExtra("EXTRA_NAME") ?: ""
+        val description = intent.getStringExtra("EXTRA_DESCRIPTION") ?: ""
+        val price = intent.getDoubleExtra("EXTRA_PRICE", 0.0)
+        val quantity = intent.getIntExtra("EXTRA_QUANTITY", 1)
 
-        cartList = ArrayList<CartModelClass>().apply {
-            add(CartModelClass(R.drawable.mocha, "Caffe Mocha", "$5.00", 2))
-            add(CartModelClass(R.drawable.white, "Flat White", "$4.50", 1))
-            add(CartModelClass(R.drawable.mocha, "Caffe Mocha", "$5.00", 2))
-            add(CartModelClass(R.drawable.white, "Flat White", "$4.50", 1))
-            add(CartModelClass(R.drawable.mocha, "Caffe Mocha", "$5.00", 2))
-            add(CartModelClass(R.drawable.white, "Flat White", "$4.50", 1))
-            add(CartModelClass(R.drawable.mocha, "Caffe Mocha", "$5.00", 2))
-            add(CartModelClass(R.drawable.white, "Flat White", "$4.50", 1))
-        }
+        val coffeeItem = CartModelClass(name, description, price, quantity)
+        setupRecyclerView(listOf(coffeeItem))
+    }
 
-        binding.cartRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@AddToCart, LinearLayoutManager.VERTICAL, false)
-            adapter = CartAdapter(cartList, this@AddToCart)
-            setHasFixedSize(true)
-        }
-
+    private fun setupRecyclerView(coffeeItems: List<CartModelClass>) {
+        binding.cartRecyclerView.layoutManager = LinearLayoutManager(this)
+        cartAdapter = CartAdapter(coffeeItems)
+        binding.cartRecyclerView.adapter = cartAdapter
     }
 }
+
+
+

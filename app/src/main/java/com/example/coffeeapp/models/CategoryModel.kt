@@ -1,5 +1,5 @@
 package com.example.coffeeapp.models
 
-class CategoryModel(
-    var title: String,
+data class CategoryModel(
+    val title:String?=null
 )

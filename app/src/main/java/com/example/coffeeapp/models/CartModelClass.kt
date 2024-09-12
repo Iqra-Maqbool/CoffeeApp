@@ -1,10 +1,9 @@
 package com.example.coffeeapp.models
 
-
-
-class CartModelClass(
-    var itemImage: Int,
-    var itemName: String,
-    var itemPrice: String,
-    var itemQuantity: Int
+data class CartModelClass(
+    val name: String,
+    val description: String,
+    val price: Double,
+    val quantity: Int
 )
+
