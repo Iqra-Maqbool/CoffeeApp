@@ -27,10 +27,8 @@
         android:background="#FFFFFF"
         app:itemIconTint="@color/iconcolor"
         app:itemTextColor="@color/iconcolor"
-        app:layout_constraintTop_toBottomOf="@id/nav_host_fragment"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
