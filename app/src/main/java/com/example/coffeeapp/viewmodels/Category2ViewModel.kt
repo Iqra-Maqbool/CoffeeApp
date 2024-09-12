@@ -1,10 +1,11 @@
 package com.example.coffeeapp.viewmodels
 
+import CategoryModelClass
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.coffeeapp.models.CategoryModelClass
+
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 

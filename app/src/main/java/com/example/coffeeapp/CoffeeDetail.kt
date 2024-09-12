@@ -3,10 +3,12 @@ package com.example.coffeeapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.coffeeapp.databinding.ActivityCoffeeDetailBinding
 
 class CoffeeDetail : AppCompatActivity() {
@@ -25,14 +27,26 @@ class CoffeeDetail : AppCompatActivity() {
             insets
         }
 
+
+
         val name = intent.getStringExtra("EXTRA_NAME")
         val description = intent.getStringExtra("EXTRA_DESCRIPTION")
         price = intent.getDoubleExtra("EXTRA_PRICE", 0.0)
+       val image = intent.getStringExtra("EXTRA_IMAGE")
+
+
 
 
         binding.showCname.text = name
         binding.showCdescription.text = description
-        updatePriceTextView() // Initialize the price TextView
+        updatePriceTextView()
+        Glide.with(this)
+            .load(image)
+            .into(binding.showCoffeeImg)
+
+
+
+
 
         binding.addToCart.setOnClickListener {
             val intent = Intent(this, AddToCart::class.java).apply {
@@ -77,3 +91,9 @@ class CoffeeDetail : AppCompatActivity() {
         }
     }
 }
+
+
+
+
+
+

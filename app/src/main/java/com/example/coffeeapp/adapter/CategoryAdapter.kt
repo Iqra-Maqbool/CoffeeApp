@@ -1,14 +1,16 @@
 // CategoryAdapter.kt
 package com.example.coffeeapp.adapter
 
+import CategoryModelClass
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.coffeeapp.CoffeeDetail
 import com.example.coffeeapp.databinding.CoffeeItemsBinding
 import com.example.coffeeapp.fragments.home.HomeFragment
-import com.example.coffeeapp.models.CategoryModelClass
+
 
 class CategoryAdapter(
     private val coffeeItems: MutableList<CategoryModelClass>,
@@ -33,16 +35,22 @@ class CategoryAdapter(
             description.text = data.description
             showPrice.text = data.price.toString()
 
+
+            Glide.with(context)
+                .load(data.image)
+                .into(categoryImg)
+
             root.setOnClickListener {
-                // Use requireContext() to get the context from the fragment
                 val intent = Intent(context.requireContext(), CoffeeDetail::class.java).apply {
                     putExtra("EXTRA_NAME", data.name)
                     putExtra("EXTRA_DESCRIPTION", data.description)
                     putExtra("EXTRA_PRICE", data.price)
+                    putExtra("EXTRA_IMAGE", data.image)
                 }
                 context.startActivity(intent)
             }
         }
     }
+
 
 }
