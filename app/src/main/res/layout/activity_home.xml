@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_170sdp"
+        android:layout_height="@dimen/_120sdp"
         android:background="#313131"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,8 +19,8 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="164dp"
-            android:layout_height="43dp"
+            android:layout_width="144dp"
+            android:layout_height="33dp"
             android:layout_marginStart="@dimen/_2sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:layout_marginEnd="@dimen/_50sdp"
@@ -28,7 +28,7 @@
             android:text="Good Morning"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="@dimen/_16sdp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +37,8 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="@dimen/_230sdp"
-            android:layout_height="@dimen/_40sdp"
+            android:layout_width="@dimen/_210sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_1sdp"
             android:layout_marginEnd="@dimen/_20sdp"
@@ -58,8 +58,8 @@
 
         android:id="@+id/materialCardView"
         android:layout_width="@dimen/_230sdp"
-        android:layout_height="@dimen/_90sdp"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginTop="@dimen/_80sdp"
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,10 +80,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:background="#D32F2F"
             android:backgroundTint="#D32F2F"
             app:cardCornerRadius="@dimen/_8sdp">
+
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
@@ -102,61 +103,56 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_28sdp"
-            android:layout_marginTop="@dimen/_44sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
             android:background="#000000"
             android:text="Buy one get"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15ssp" />
+            android:textSize="@dimen/_12ssp" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_28sdp"
-            android:layout_marginTop="@dimen/_68sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:background="#000000"
             android:text="one FREE"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15ssp" />
+            android:textSize="@dimen/_12ssp" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categoryRecyclerView"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/_198sdp"
-        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_height="@dimen/_190sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         app:layout_constraintBottom_toTopOf="@id/bNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/CatRV">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout8"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_28sdp"
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CatRV"
+        android:layout_width="@dimen/_280sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_28sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/CatRV"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+        app:layout_constraintBottom_toTopOf="@id/categoryRecyclerView"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView"
+        tools:layout_editor_absoluteY="259dp" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_28sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -164,26 +160,27 @@
 
 
         <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:backgroundTint="@color/white"
             app:fabCradleMargin="@dimen/_16sdp"
             app:fabCradleRoundedCornerRadius="50dp"
-            app:fabCradleVerticalOffset="1dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/app_bar"
-            android:layout_marginTop="@dimen/_1sdp"
-            android:layout_gravity="bottom"
-            android:backgroundTint="@color/white">
+            app:fabCradleVerticalOffset="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_gravity="bottom"
+
                 android:orientation="horizontal">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.2"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2">
 
                     <ImageView
                         android:id="@+id/imageView30"
@@ -196,10 +193,11 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/baseline_home_24" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.2"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2">
 
                     <ImageView
                         android:id="@+id/imageView300"
@@ -211,10 +209,11 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/baseline_favorite_24" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.2"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2">
 
                     <ImageView
                         android:id="@+id/imageView3000"
@@ -227,10 +226,11 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/username" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.2"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2">
 
                     <ImageView
                         android:id="@+id/imageView3"
@@ -243,10 +243,11 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/username" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_weight="0.2"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2">
 
                     <ImageView
                         android:id="@+id/imageView45"
@@ -262,7 +263,6 @@
             </LinearLayout>
 
 
-
         </com.google.android.material.bottomappbar.BottomAppBar>
 
 
@@ -271,7 +271,7 @@
             android:layout_width="@dimen/_60sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_1sdp"
             android:backgroundTint="#C67C4E"
             android:src="@drawable/baseline_shopping_cart_24"
             android:tint="@color/white"
