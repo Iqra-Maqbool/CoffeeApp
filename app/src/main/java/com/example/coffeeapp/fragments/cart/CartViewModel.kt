@@ -1,6 +1,5 @@
 
-package com.example.coffeeapp.fragments.addToCart
-
+package com.example.coffeeapp.fragments.cart
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -8,8 +7,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class CartViewModel : ViewModel() {
 
-    val cartItems = MutableLiveData<MutableList<CartModelClass>>(mutableListOf())
+    val cartItems = MutableLiveData<MutableList<CartModel>>(mutableListOf())
     private val firestore = FirebaseFirestore.getInstance()
+    private val deliveryCharge = 200.0
+    val subTotal = MutableLiveData<Double>()
+    val totalAmount = MutableLiveData<Double>()
 
     fun fetchCartItems(userId: String) {
         firestore.collection("users")
@@ -17,54 +19,58 @@ class CartViewModel : ViewModel() {
             .collection("cartItems")
             .get()
             .addOnSuccessListener { result ->
-                val items = mutableListOf<CartModelClass>()
+                val items = mutableListOf<CartModel>()
                 for (document in result) {
-                    val item = document.toObject(CartModelClass::class.java)
+                    val item = document.toObject(CartModel::class.java)
                     items.add(item)
                 }
                 cartItems.value = items
+                calculateSubtotalAndTotal(items)
             }
             .addOnFailureListener {
-                // Handle errors
+
             }
     }
 
-    fun addItem(item: CartModelClass) {
+    fun calculateSubtotalAndTotal(items: MutableList<CartModel>) {
+        var subtotal = 0.0
+        for (item in items) {
+            subtotal += item.unitPrice * item.quantity
+        }
+        subTotal.value = subtotal
+        totalAmount.value = subtotal + deliveryCharge
+    }
+
+    fun addItem(item: CartModel) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         firestore.collection("users")
             .document(userId)
             .collection("cartItems")
             .add(item)
             .addOnSuccessListener {
-                // Successfully added
+                fetchCartItems(userId)
             }
             .addOnFailureListener {
-                // Handle failure
+
             }
     }
 
-    fun clearCart() {
-        val currentUser = FirebaseAuth.getInstance().currentUser
-        currentUser?.let { user ->
-            val firestore = FirebaseFirestore.getInstance()
-            val cartItemsRef = firestore.collection("users").document(user.uid).collection("cartItems")
-
-            cartItemsRef.get().addOnSuccessListener { result ->
-                val batch = firestore.batch()
-                for (document in result.documents) {
-                    batch.delete(document.reference)
-                }
-                batch.commit().addOnSuccessListener {
-                    // Clear local cart items in ViewModel
-                    cartItems.value = mutableListOf()
-                }
-            }.addOnFailureListener { exception ->
-                // Handle any errors that occur
+    fun clearCart(userId: String) {
+        val cartItemsRef = firestore.collection("users").document(userId).collection("cartItems")
+        cartItemsRef.get().addOnSuccessListener { result ->
+            val batch = firestore.batch()
+            for (document in result.documents) {
+                batch.delete(document.reference)
             }
+            batch.commit().addOnSuccessListener {
+                cartItems.value = mutableListOf()
+            }
+        }.addOnFailureListener {
+
         }
     }
 
-    fun updateItem(item: CartModelClass) {
+    fun updateItem(item: CartModel) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val cartRef = firestore.collection("users")
             .document(userId)
@@ -76,13 +82,14 @@ class CartViewModel : ViewModel() {
                 for (document in result) {
                     document.reference.update("quantity", item.quantity)
                 }
+                fetchCartItems(userId)
             }
             .addOnFailureListener {
-                // Handle errors
+
             }
     }
 
-    fun deleteItem(item: CartModelClass) {
+    fun deleteItem(item: CartModel) {
         val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
         val cartRef = firestore.collection("users")
             .document(userId)
@@ -96,12 +103,38 @@ class CartViewModel : ViewModel() {
                     batch.delete(document.reference)
                 }
                 batch.commit().addOnSuccessListener {
-
                     fetchCartItems(userId)
                 }
                     .addOnFailureListener {
 
                     }
+            }
+    }
+
+    fun addCartItemsToOrders(userId: String) {
+        val cartItems = cartItems.value ?: mutableListOf()
+        val ordersRef = firestore.collection("users")
+            .document(userId)
+            .collection("orders")
+
+        val batch = firestore.batch()
+
+        for (cartItem in cartItems) {
+            val orderData = hashMapOf(
+                "name" to cartItem.name,
+                "quantity" to cartItem.quantity,
+                "price" to cartItem.unitPrice * cartItem.quantity
+            )
+            val newOrderRef = ordersRef.document()
+            batch.set(newOrderRef, orderData)
+        }
+
+        batch.commit()
+            .addOnSuccessListener {
+                clearCart(userId)
+            }
+            .addOnFailureListener { exception ->
+
             }
     }
 }

@@ -1,6 +1,5 @@
 
-package com.example.coffeeapp.fragments.coffeeDetailFragment
-
+package com.example.coffeeapp.fragments.details
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +11,8 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.coffeeapp.R
 import com.example.coffeeapp.databinding.FragmentCoffeeDetailBinding
-import com.example.coffeeapp.fragments.addToCart.CartModelClass
-import com.example.coffeeapp.fragments.addToCart.CartViewModel
+import com.example.coffeeapp.fragments.cart.CartModel
+import com.example.coffeeapp.fragments.cart.CartViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -50,7 +49,7 @@ class CoffeeDetailFragment : Fragment() {
             .into(binding.showCoffeeImg)
 
         binding.addToCart.setOnClickListener {
-            val coffeeItem = CartModelClass(name, description, price, quantity)
+            val coffeeItem = CartModel(name, description, price, quantity)
             cartViewModel.addItem(coffeeItem)
             it.findNavController().navigate(R.id.action_coffeeDetailFragment_to_addToCartFragment)
         }
@@ -85,8 +84,6 @@ class CoffeeDetailFragment : Fragment() {
     private fun addCoffeeToOrders(coffeeName: String, coffeePrice: Double, quantity: Int) {
         val userId = auth.currentUser?.uid ?: return
         val ordersRef = firestore.collection("users").document(userId).collection("orders")
-
-        // Create new document in the orders sub-collection
         val orderData = hashMapOf(
             "name" to coffeeName,
             "quantity" to quantity,
@@ -102,8 +99,4 @@ class CoffeeDetailFragment : Fragment() {
             }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        // Clean up resources
-    }
 }

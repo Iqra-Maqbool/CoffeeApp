@@ -6,20 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coffeeapp.databinding.FragmentOrderBinding
 
-
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-
 class OrderFragment : Fragment() {
-
     private var _binding: FragmentOrderBinding? = null
     private val binding get() = _binding!!
     private lateinit var orderAdapter: OrderAdapter
-    private val auth = FirebaseAuth.getInstance()
-    private val firestore = FirebaseFirestore.getInstance()
+    private lateinit var orderViewModel: OrderViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,13 +26,10 @@ class OrderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        orderViewModel = ViewModelProvider(this)[OrderViewModel::class.java]
         setupRecyclerView()
-
-        val user = auth.currentUser
-        user?.let {
-            fetchOrders(it.uid)
-        }
+        setupObservers()
+        orderViewModel.fetchOrders()
     }
 
     private fun setupRecyclerView() {
@@ -46,22 +38,14 @@ class OrderFragment : Fragment() {
         binding.orderRecyclerView.adapter = orderAdapter
     }
 
-    private fun fetchOrders(userId: String) {
-        firestore.collection("users")
-            .document(userId)
-            .collection("orders")
-            .get()
-            .addOnSuccessListener { documents ->
-                val orderList = mutableListOf<OrderModelClass>()
-                for (document in documents) {
-                    val order = document.toObject(OrderModelClass::class.java)
-                    orderList.add(order)
-                }
-                orderAdapter.updateOrders(orderList)
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(requireContext(), "Error fetching orders: ${exception.message}", Toast.LENGTH_SHORT).show()
-            }
+    private fun setupObservers() {
+        orderViewModel.orders.observe(viewLifecycleOwner) { orders ->
+            orderAdapter.updateOrders(orders.toMutableList())
+        }
+
+        orderViewModel.error.observe(viewLifecycleOwner) { errorMessage ->
+            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroyView() {
@@ -69,3 +53,4 @@ class OrderFragment : Fragment() {
         _binding = null
     }
 }
+

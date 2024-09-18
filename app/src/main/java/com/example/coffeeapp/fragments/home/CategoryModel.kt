@@ -1,5 +1,5 @@
 package com.example.coffeeapp.fragments.home
 
-data class CategoryModelClass(
+data class CategoryModel(
     val title:String?=null
 )

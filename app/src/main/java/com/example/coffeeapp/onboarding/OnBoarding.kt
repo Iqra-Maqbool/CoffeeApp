@@ -1,4 +1,4 @@
-package com.example.coffeeapp.onBoarding
+package com.example.coffeeapp.onboarding
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.coffeeapp.R
-import com.example.coffeeapp.authentication.Login
+import com.example.coffeeapp.authentication.LoginActivity
 import com.example.coffeeapp.databinding.ActivityOnBoardingBinding
 
 class OnBoarding : AppCompatActivity() {
@@ -23,7 +23,7 @@ class OnBoarding : AppCompatActivity() {
             insets
         }
         binding.getStarted.setOnClickListener(){
-            startActivity(Intent(this, Login::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
     }

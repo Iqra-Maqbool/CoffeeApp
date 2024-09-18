@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class Login : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firestore: FirebaseFirestore
@@ -51,13 +51,13 @@ class Login : AppCompatActivity() {
                 if (loginUsername.isNotEmpty() && loginPassword.isNotEmpty()) {
                     loginUser(loginUsername, loginPassword)
                 } else {
-                    Toast.makeText(this@Login, "Please Fill All Fields", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Please Fill All Fields", Toast.LENGTH_SHORT).show()
                 }
             }
 
 
             siguphere.setOnClickListener {
-                startActivity(Intent(this@Login, Signup::class.java))
+                startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
                 finish()
             }
         }

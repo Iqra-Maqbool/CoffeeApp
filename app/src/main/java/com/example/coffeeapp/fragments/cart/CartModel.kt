@@ -1,6 +1,6 @@
 
-package com.example.coffeeapp.fragments.addToCart
-data class CartModelClass(
+package com.example.coffeeapp.fragments.cart
+data class CartModel(
     val name: String = "",
     val description: String = "",
     val unitPrice: Double = 0.0,

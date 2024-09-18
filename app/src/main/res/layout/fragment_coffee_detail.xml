@@ -26,7 +26,7 @@
         <ImageView
             android:id="@+id/showCoffeeImg"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_height="@dimen/_150sdp"
             android:layout_marginTop="@dimen/_3sdp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
             android:id="@+id/cardView3"
             android:layout_width="@dimen/_168sdp"
             android:layout_height="@dimen/_35sdp"
-            android:layout_marginTop="@dimen/_105sdp"
-            app:cardCornerRadius="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_130sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
             app:layout_constraintEnd_toEndOf="@+id/showCoffeeImg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -212,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_36sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout5"
                 app:layout_constraintEnd_toEndOf="@+id/constraintLayout5"
@@ -220,7 +220,7 @@
                 app:layout_constraintTop_toTopOf="@id/constraintLayout5">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
@@ -235,7 +235,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">
@@ -251,7 +251,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="@dimen/_90sdp"
+                    android:layout_width="@dimen/_80sdp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_4sdp"
                     app:cardCornerRadius="15dp">

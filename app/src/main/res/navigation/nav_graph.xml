@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
-        android:name="com.example.coffeeapp.fragments.addToCart.AddToCartFragment"
+        android:name="com.example.coffeeapp.fragments.cart.AddToCartFragment"
         android:label="fragment_favourite"
         tools:layout="@layout/fragment_favourite" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/coffeeDetailFragment"
-        android:name="com.example.coffeeapp.fragments.coffeeDetailFragment.CoffeeDetailFragment"
+        android:name="com.example.coffeeapp.fragments.details.CoffeeDetailFragment"
         android:label="fragment_coffee_detail"
         tools:layout="@layout/fragment_coffee_detail" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/addToCartFragment"
-        android:name="com.example.coffeeapp.fragments.addToCart.AddToCartFragment"
+        android:name="com.example.coffeeapp.fragments.cart.AddToCartFragment"
         android:label="AddToCartFragment" >
         <action
             android:id="@+id/action_addToCartFragment_to_coffeeDetailFragment"
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/personDetailFragment"
-        android:name="com.example.coffeeapp.fragments.userDetail.PersonDetailFragment"
+        android:name="com.example.coffeeapp.fragments.user.PersonDetailFragment"
         android:label="fragment_person_detail"
         tools:layout="@layout/fragment_person_detail" />
 </navigation>

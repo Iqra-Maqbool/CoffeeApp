@@ -13,7 +13,7 @@ import com.example.coffeeapp.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Signup : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firestore: FirebaseFirestore
@@ -46,17 +46,17 @@ class Signup : AppCompatActivity() {
                     if (Patterns.EMAIL_ADDRESS.matcher(signupEmail).matches()) {
                         signupUser(signupUsername, signupEmail, signupPassword)
                     } else {
-                        Toast.makeText(this@Signup, "Invalid Email Format", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@SignupActivity, "Invalid Email Format", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this@Signup, "Fill All Fields", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignupActivity, "Fill All Fields", Toast.LENGTH_SHORT).show()
                 } }
 
         }
 
 
         binding.loginHere.setOnClickListener {
-            startActivity(Intent(this@Signup, Login::class.java))
+            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
             finish()
         }
     }
@@ -69,12 +69,12 @@ class Signup : AppCompatActivity() {
 
                     val user = auth.currentUser
                     if (user != null) {
-                        val userModelClass = UserModelClass(username, email, password)
-                        firestore.collection("users").document(user.uid).set(userModelClass)
+                        val userModel = UserModel(username, email, password)
+                        firestore.collection("users").document(user.uid).set(userModel)
                             .addOnCompleteListener { firestoreTask ->
                                 if (firestoreTask.isSuccessful) {
                                     Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
-                                    startActivity(Intent(this, Login::class.java))
+                                    startActivity(Intent(this, LoginActivity::class.java))
                                     finish()
                                 } else {
                                     Toast.makeText(this, "Failed to save user data", Toast.LENGTH_SHORT).show()

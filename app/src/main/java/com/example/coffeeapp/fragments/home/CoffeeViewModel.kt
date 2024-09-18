@@ -8,11 +8,11 @@ import com.google.firebase.ktx.Firebase
 class CoffeeViewModel : ViewModel() {
 
 
-    private val _coffeeList = MutableLiveData<List<CoffeeModelClass>?>()
-    val coffeeList: LiveData<List<CoffeeModelClass>?> get() = _coffeeList
+    private val _coffeeList = MutableLiveData<List<CoffeeModel>?>()
+    val coffeeList: LiveData<List<CoffeeModel>?> get() = _coffeeList
 
-    private val _filteredCoffeeList = MutableLiveData<List<CoffeeModelClass>?>()
-    val filteredCoffeeList: LiveData<List<CoffeeModelClass>?> get() = _filteredCoffeeList
+    private val _filteredCoffeeList = MutableLiveData<List<CoffeeModel>?>()
+    val filteredCoffeeList: LiveData<List<CoffeeModel>?> get() = _filteredCoffeeList
 
     private val _errorMessage = MutableLiveData<String?>()
     val errorMessage: LiveData<String?> get() = _errorMessage
@@ -23,9 +23,9 @@ class CoffeeViewModel : ViewModel() {
             .collection("CoffeeType")
             .get()
             .addOnSuccessListener { coffeeData ->
-                val coffeeItems = mutableListOf<CoffeeModelClass>()
+                val coffeeItems = mutableListOf<CoffeeModel>()
                 for (data in coffeeData.documents) {
-                    val coffee = data.toObject(CoffeeModelClass::class.java)
+                    val coffee = data.toObject(CoffeeModel::class.java)
                     coffee?.let {
                         coffeeItems.add(it)
                     }
@@ -50,40 +50,3 @@ class CoffeeViewModel : ViewModel() {
         }
     }
 }
-
-
-
-/*
-package com.example.coffeeapp.fragments.home
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-class com.example.coffeeapp.fragments.home.CoffeeViewModel : ViewModel() {
-
-    private val _category2= MutableLiveData<MutableList<CoffeeModelClass>>()
-    val category2: LiveData<MutableList<CoffeeModelClass>> get() = _category2
-    private val _errorMessage2 = MutableLiveData<String?>()
-    val errorMessage2: LiveData<String?> get() = _errorMessage2
-
-    fun loadCoffee() {
-        Firebase.firestore.collection("Coffee")
-            .document("type")
-            .collection("CoffeeType")
-            .get()
-            .addOnSuccessListener { questionData ->
-                val categoryList = mutableListOf<CoffeeModelClass>()
-                for (data in questionData.documents) {
-                    val category = data.toObject(CoffeeModelClass::class.java)
-                    category?.let {
-                        categoryList.add(it)
-                    }
-                }
-                _category2.value = categoryList
-            }
-            .addOnFailureListener {
-                _errorMessage2.value = "Failed to fetch categories"
-            }
-    }
-}*/

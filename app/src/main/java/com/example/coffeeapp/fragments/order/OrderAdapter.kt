@@ -1,7 +1,5 @@
 
 package com.example.coffeeapp.fragments.order
-
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,11 +9,11 @@ import com.example.coffeeapp.databinding.OrderItemsBinding
 class OrderAdapter(
 
 
-    private var orders: MutableList<OrderModelClass>
+    private var orders: MutableList<OrderModel>
 ) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
     inner class OrderViewHolder(val binding: OrderItemsBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(order: OrderModelClass) {
+        fun bind(order: OrderModel) {
             binding.coffeeeName.text = order.name
             binding.Quantity.text = order.quantity.toString()
             binding.itemsPrice.text = order.price.toString()
@@ -33,7 +31,7 @@ class OrderAdapter(
 
     override fun getItemCount(): Int = orders.size
 
-    fun updateOrders(newOrders: MutableList<OrderModelClass>) {
+    fun updateOrders(newOrders: MutableList<OrderModel>) {
         orders = newOrders
         notifyDataSetChanged()
     }
