@@ -1,14 +1,13 @@
-package com.example.coffeeapp.adapter
+package com.example.coffeeapp.fragments.home
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coffeeapp.databinding.CategoryItemsBinding
-import com.example.coffeeapp.models.CategoryModel
 
-class CatAdapter(var items:MutableList<CategoryModel>)
-    : RecyclerView.Adapter<CatAdapter.MyCategoryViewHolder>() {
+class CategoryAdapter(var items:MutableList<CategoryModelClass>)
+    : RecyclerView.Adapter<CategoryAdapter.MyCategoryViewHolder>() {
 
 
 

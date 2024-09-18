@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:background="#C67C4E"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="334dp"
+            android:layout_height="48dp"
+            android:background="@drawable/search"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:queryHint="Search Coffee..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.282" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.card.MaterialCardView
+
+        android:id="@+id/materialCardView"
+        android:layout_width="@dimen/_230sdp"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_marginTop="@dimen/_80sdp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/banner"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ban"
+            tools:layout_editor_absoluteX="-7dp"
+            tools:layout_editor_absoluteY="232dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView2"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_17sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="#D32F2F"
+            android:backgroundTint="#D32F2F"
+            app:cardCornerRadius="@dimen/_8sdp">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_2sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingEnd="@dimen/_1sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="Promo"
+
+
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:background="#000000"
+            android:text="Buy one get"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="#000000"
+            android:text="one FREE"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginRight="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        tools:listitem="@layout/coffee_items"
+        app:spanCount="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CatRV">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CatRV"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

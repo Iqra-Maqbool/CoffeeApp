@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".CoffeeDetail">
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/TopConstraint"
@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -32,7 +33,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/mocha" />
+            tools:srcCompat="@drawable/mocha" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
@@ -172,7 +173,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
 
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:text="A Cappuccino is an approximately 150 ml\nbeverage, with 25 ml of espresso Coffee \nand 45ml of fresh milk. "
                 android:textSize="@dimen/_15ssp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -210,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_36sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@id/constraintLayout5"
@@ -272,7 +273,7 @@
             android:id="@+id/constraintLayout6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginTop="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -296,31 +297,17 @@
                 android:id="@+id/showCprice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_3sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/_20sdp"
                 android:text="432"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView3"
                 app:layout_constraintTop_toBottomOf="@+id/textView18"
-                app:layout_constraintVertical_bias="0.074" />
+                app:layout_constraintVertical_bias="0.38" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/addToCart"
-                android:layout_width="@dimen/_105sdp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:backgroundTint="#C67C4E"
-                android:text="Add to cart"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
 
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0">
-
-            </com.google.android.material.button.MaterialButton>
 
             <TextView
                 android:id="@+id/textView3"
@@ -329,7 +316,7 @@
 
                 android:layout_marginTop="@dimen/_4sdp"
                 android:text="Rs."
-
+                android:layout_marginBottom="@dimen/_20sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView18"
@@ -337,19 +324,28 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buy_now"
-                android:layout_width="@dimen/_105sdp"
+                android:layout_width="@dimen/_95sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_40sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_6sdp"
                 android:backgroundTint="#C67C4E"
                 android:text="Buy Now"
+                android:layout_marginLeft="@dimen/_36sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/addToCart"
-                app:layout_constraintHorizontal_bias="0.764"
-                app:layout_constraintStart_toEndOf="@+id/showCprice"
+
+                app:layout_constraintStart_toEndOf="@+id/textView18"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0">
+              >
+            </com.google.android.material.button.MaterialButton>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addToCart"
+                android:layout_width="@dimen/_115sdp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#C67C4E"
+                app:layout_constraintLeft_toRightOf="@id/buy_now"
+                android:text="Add to cart"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
             </com.google.android.material.button.MaterialButton>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_width="@dimen/_85sdp"
     android:layout_height="@dimen/_30sdp"
     android:layout_margin="@dimen/_4sdp"
-    app:cardCornerRadius="15dp"
+    app:cardCornerRadius="10dp"
     >
 
 

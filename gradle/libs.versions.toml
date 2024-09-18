@@ -16,6 +16,7 @@ firebaseAuth = "23.0.0"
 firebaseDatabaseKtx = "21.0.0"
 cardview = "1.0.0"
 firebaseDatabase = "21.0.0"
+leanback = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,7 @@ firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version
 firebase-database-ktx = { group = "com.google.firebase", name = "firebase-database-ktx", version.ref = "firebaseDatabaseKtx" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+androidx-leanback = { group = "androidx.leanback", name = "leanback", version.ref = "leanback" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

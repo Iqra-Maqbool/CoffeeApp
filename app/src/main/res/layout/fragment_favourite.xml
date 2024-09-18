@@ -5,64 +5,80 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddToCart">
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <TextView
+            android:id="@+id/TV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:text="My Cart"
+            android:paddingLeft="@dimen/_18sdp"
+            app:layout_constraintBottom_toTopOf="@+id/cartRecyclerView"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cartRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_303sdp"
+            android:layout_height="@dimen/_255sdp"
+            app:layout_constraintBottom_toTopOf="@+id/CL"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/TV" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
+            android:id="@+id/CL"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cartRecyclerView">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
+                android:id="@+id/buyNowButton"
                 android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_2sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:backgroundTint="#C67C4E"
-                android:fontFamily="@font/sora_semibold"
-                android:gravity="center"
-                android:includeFontPadding="false"
-                android:text="Buy Now"
-                android:textSize="@dimen/_13ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"></com.google.android.material.button.MaterialButton>
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="center"
+                android:text="BUY NOW"
+                android:fontFamily="@font/sora_semibold"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout30"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/_13ssp">
 
+            </com.google.android.material.button.MaterialButton>
+
+-->
             <LinearLayout
                 android:id="@+id/linearLayout30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_18sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintBottom_toTopOf="@id/buyNowButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,18 +98,17 @@
                     android:id="@+id/textView140"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_170sdp"
+                    android:layout_marginLeft="@dimen/_144sdp"
                     android:text="Rs."
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/textView150"
+                    android:id="@+id/totalAmount"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
 
                     android:layout_marginRight="@dimen/_10sdp"
-                    android:text="250"
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
             </LinearLayout>
@@ -103,7 +118,7 @@
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_1sdp"
                 android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginTop="@dimen/_24sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:background="#000000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -136,18 +151,18 @@
                     android:id="@+id/money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_90sdp"
+                    android:layout_marginLeft="@dimen/_68sdp"
                     android:text="Rs."
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/amount"
+                    android:id="@+id/dCharges"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
                     android:layout_marginRight="@dimen/_10sdp"
-                    android:text="10"
+                    android:text="200"
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
             </LinearLayout>
@@ -176,23 +191,20 @@
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_140sdp"
+                    android:layout_marginLeft="@dimen/_120sdp"
                     android:text="Rs."
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/subTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
                     android:layout_marginRight="@dimen/_10sdp"
-                    android:text="250"
                     android:textSize="@dimen/_15ssp"
                     android:textStyle="normal" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

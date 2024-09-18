@@ -1,4 +1,4 @@
-package com.example.coffeeapp.models
+package com.example.coffeeapp.authentication
 
 data class UserModelClass(
     val username:String?=null,

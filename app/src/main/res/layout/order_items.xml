@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_20sdp"
+    android:layout_marginLeft="@dimen/_20sdp"
+    app:cardCornerRadius="10dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mCardView2"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_60sdp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/coffeepic"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/white" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint9"
+            android:layout_marginRight="@dimen/_20ssp"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/constraint7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toEndOf="@+id/mCardView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/coffeeeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Espresso"
+                android:textAlignment="center"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linear5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/coffeeeName">
+
+                <TextView
+                    android:id="@+id/textView2400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs."
+
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/itemsPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:text="40"
+                    android:textSize="@dimen/_10ssp" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint7"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layout_constraintTop_toBottomOf="@id/constraint9"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mCardView2">
+
+
+            <TextView
+                    android:id="@+id/Quantity"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintLeft_toRightOf="@id/quantities"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/quantities"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:gravity="center_vertical"
+                android:text="Quantity"
+                android:textAlignment="center"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="bold"
+                app:layout_constraintRight_toLeftOf="@id/Quantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Quantity" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -1,4 +1,4 @@
-package com.example.coffeeapp
+package com.example.coffeeapp.authentication
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
@@ -7,8 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.coffeeapp.R
 import com.example.coffeeapp.databinding.ActivitySignupBinding
-import com.example.coffeeapp.models.UserModelClass
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -56,13 +56,12 @@ class Signup : AppCompatActivity() {
 
 
         binding.loginHere.setOnClickListener {
-            startActivity(Intent(this@Signup,Login::class.java))
+            startActivity(Intent(this@Signup, Login::class.java))
             finish()
         }
     }
 
 
-    //Function to add new User
     private fun signupUser(username: String, email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
